@@ -1,0 +1,8 @@
+create table Office(
+    name varchar(30),
+    payrate double(9,2),
+    SSN varchar(30),
+    JobTitle varchar(30),
+    hoursWorked int(5),
+    constraint name primary key(name)
+);

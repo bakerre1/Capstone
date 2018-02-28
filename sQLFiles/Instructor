@@ -1,0 +1,9 @@
+create table Instructor(
+    name varchar(20),
+    type varchar(20),
+    phone varchar(30),
+    payrate double(9,2),
+    SSN varchar(20),
+    email varchar(20),
+    constraint primary key(name)
+);

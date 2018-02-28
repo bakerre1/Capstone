@@ -1,0 +1,8 @@
+create table Priority (
+    InstructorName varchar(30),
+    rank int(3),
+    type varchar(10),
+    LessonType char(1),
+    constraint primary key(rank),
+    constraint foreign key(InstructorName) references Instructor(name)
+);

@@ -1,0 +1,9 @@
+create Table Customer(
+    name varchar(30),
+    email varchar(30),
+    date varchar(30),
+    hoursTaken int(2),
+    instructorName varchar(30),
+    constraint name primary key(name),
+    constraint foreign key(instructorName) references Instructor(name)
+); 
