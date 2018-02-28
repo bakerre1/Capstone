@@ -5,5 +5,6 @@ create table Instructor(
     payrate double(9,2),
     SSN varchar(20),
     email varchar(20),
+    Salary varchar(30),
     constraint primary key(name)
 );
