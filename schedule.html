@@ -1,0 +1,133 @@
+
+<html>
+
+
+    <head>
+        <link rel='stylesheet' href='fullcalendar.css'/>
+        <script src='jquery.js'></script>
+        <script src='moment.js'></script>
+        <script src='fullcalendar.js'></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    </head>
+    <body>
+    <div id="header">
+    <table>
+    <h2>French Swiss Ski College</h2>
+    <tr><a href="index.html">
+    <img src=https://skifrenchswiss.com/files/frenchswiss_logo.jpg align=right height=200px width=200px></tr>
+    </a>
+    <p>Operational Database</p>
+    <ul id="menu">
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="view.html">View Employees</a></li>
+         <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Insert Data <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="instructor.html" class="w3-bar-item w3-button">Employee Data</a>
+      <a href="customer.html" class="w3-bar-item w3-button">Customer Data</a>
+      <a href="priority.html" class="w3-bar-item w3-button">Priority List</a>
+    </div> 
+</div> 
+        <li><a href="customerData.html">Customer Data</a></li>
+    </ul>
+
+</div>
+</table>
+
+
+<br><p>Input Schedule and Name to be scheduled below </p>
+    <div id='calendar'></div>
+<br>
+
+<iframe src="https://calendar.google.com/calendar/embed?src=ntbub6eqtge3i4r08aohv9ug58%40group.calendar.google.com&ctz=America%2FNew_York" 
+    style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<br>
+<br><br>
+Schedule Details: <input type ="text" name="date" >
+
+</body>
+<table>
+<form action="https://www.googleapis.com/calendar/v3/calendars/ntbub6eqtge3i4r08aohv9ug58@group.calendar.google.com/events/quickAdd" method="post">
+
+<div data-provide="calendar"></div>
+<!--
+
+<tr><td>Schedule Summary:</td><td><input type="text" id="summary" name="summary" /></td></tr>
+<tr><td>Date Time</td><td><input type="text" name="date" /></td></tr>
+-->
+
+<!--<button onclick="authenticate().then(loadClient)">authorize and load</button>
+-->
+
+</table>
+
+
+
+<script src="https://www.googleapis.com/auth/calendar"></script>
+<script>
+  
+  function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/calendar"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
+  }
+ 
+  function loadClient() {
+    return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  
+ 
+  /**
+  function loadClient() {
+    gapi.client.setApiKey("AIzaSyCDJD3u5gb210BWIVSZeeHW-3u2NypnHV0");
+    return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  */
+
+
+  function execute() {
+    //var nameValue = document.getElementById("summary").value;
+    return gapi.client.calendar.events.quickAdd({
+      "calendarId": "ntbub6eqtge3i4r08aohv9ug58@group.calendar.google.com",
+      "text": "COffee with RYan on April 29th at 8:00pm ",
+      "sendNotifications": "true"
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  };
+  gapi.load("client:auth2", function() {
+       gapi.auth2.init({client_id: YOUR_CLIENT_ID});
+  }); 
+
+ //htaccess
+</script>
+<button onclick="authenticate().then(loadClient)">authorize and load</button>
+<button onclick="execute()">execute</button>
+
+
+
+</table>
+</form>
+
+
+
+
+
+
+<style>
+
+body,h1,h2,h3,h4,h5 {font-family: "Times New Roman", sans-serif}
+body {font-size:16px; padding : 12px; }
+.w3-half img{margin-bottom:12px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+
+</style>

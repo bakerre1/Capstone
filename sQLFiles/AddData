@@ -2,7 +2,7 @@ insert into Instructor (name, type, phone, payrate, SSN, email) values(
     'Ryan Baker', 'InstructorSki', '7046575935', 14.20, '1111111111', 'bakerre1@appstate.edu' 
     );
 
-insert into Instructor (name, type, phone, SSN, email, salary) values(
+insert into Instructor (name, type, phone, SSN, email, Salary) values(
     'Jason Coggins', 'Coordinator', '7046575936', '1111111111', 'bakerre1@appstate.edu', 20000
         );
  

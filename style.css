@@ -1,0 +1,44 @@
+#header {
+    height: 340px;
+    border:10px;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+
+}
+#header h2 {    
+    font-size: 2em;
+    position: relative;
+    top: 30px;
+    left: 50px;
+    display: inline;
+}
+#header p {
+    font-size: 1.3em;
+    font-weight: bold;
+    position: relative;
+    display: inline
+    top: 50px;
+    left:70px;
+}    
+#menu {
+    position: relative;
+    
+    display: inline-block;
+}
+#menu li{
+    font-weight: bold;
+    display: inline;
+    margin-right:14px;
+    text-transform: uppercase;
+}
+
+div {
+    position: relative;
+    border:black; 
+}
+
+body,h1,h2,h3,h4,h5 {font-family: "Times New Roman", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+

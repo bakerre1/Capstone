@@ -1,0 +1,6 @@
+SET FOREIGN_KEY_CHECKS = 0;
+drop table if exists Instructor;
+drop table if exists Priority;
+drop table if exists Customer;
+SET FOREIGN_KEY_CHECKS = 1;
+

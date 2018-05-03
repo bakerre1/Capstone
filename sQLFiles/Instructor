@@ -1,10 +1,34 @@
+SET FOREIGN_KEY_CHECKS = 0;
+
 create table Instructor(
     name varchar(20),
     type varchar(20),
     phone varchar(30),
     payrate double(9,2),
     SSN varchar(20),
-    email varchar(20),
+    email varchar(60),
     Salary varchar(30),
     constraint primary key(name)
 );
+
+create table Priority (
+    InstructorName varchar(30),
+    rank int(3),
+    type varchar(10),
+    LessonType char(1),
+    constraint foreign key(InstructorName) references Instructor(name),
+    constraint primary key(rank)
+);
+
+create Table Customer(
+    name varchar(30),
+    email varchar(30),
+    date varchar(30),
+    hoursTaken int(2),
+    instructorName varchar(30),
+    constraint name primary key(name),
+    constraint foreign key(instructorName) references Instructor(name)
+);
+
+SET FOREIGN_KEY_CHECKS = 1;
+

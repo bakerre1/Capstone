@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    </head>
+    <body>
+    <div id="header">
+    <table>
+    <h2>French Swiss Ski College</h2>
+    <tr><a href="index.html">
+    <img src=https://skifrenchswiss.com/files/frenchswiss_logo.jpg align=right height=200px width=200px></tr>
+    </a>
+    <p>Operational Database</p>
+    <ul id="menu">
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="index.php">View Employees</a></li>
+        <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Insert Data <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="instructor.html" class="w3-bar-item w3-button">Employee Data</a>
+      <a href="customer.html" class="w3-bar-item w3-button">Customer Data</a>
+      <a href="priority.html" class="w3-bar-item w3-button">Priority List</a>
+    </div>
+</div>
+        <li><a href="customerData.html">Customer Data</a></li>
+    </ul>
+</div>
+<div class="view">
+<h2>View Data</h2>
+<p><b>Select information below: </b></p>
+<form action="index.php" method="GET" id= "searchform">
+Search table:
+<select name="value">
+    <option value="Instructor"> Employee </option>
+    <option value="Priority"> Priority List </option>
+    <option value="Customer"> Customer </option>
+</select>
+
+<tr><td><input type="submit" name="submit" value="View"/></td></tr>
+</div>
+
+</table>
+</form>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Times New Roman", sans-serif}
+body {font-size:16px; margin-left:}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer  margin-left: 80px;}
+.w3-half img:hover{opacity:1}
+</style>
+
